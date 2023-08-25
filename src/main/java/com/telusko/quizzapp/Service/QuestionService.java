@@ -15,4 +15,15 @@ public class QuestionService {
     public List<Question> getAllQuestions() {
         return questionDao.findAll();
     }
+
+    public List<Question> getQuestionsByCategory(String category) {
+        return questionDao.findQuestionsByCategory(category);
+    }
+
+    public String addQuestion(Question question) {
+        System.out.println("+++++++++++++++++++ " + question + " +++++++++++++++++++" );
+        Question save = questionDao.save(question);
+        System.out.println("+++++++++++++++++++ " + question + " +++++++++++++++++++" );
+        return question.toString();
+    }
 }
